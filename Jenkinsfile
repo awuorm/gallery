@@ -36,7 +36,7 @@ pipeline {
         }
         stage('Test') {
       steps {
-         bat 'npm test'
+         bat 'nmp test'
       }
     }   
         stage('Deploy') {
