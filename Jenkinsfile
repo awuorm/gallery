@@ -36,12 +36,12 @@ pipeline {
         }
         stage('Test') {
       steps {
-         bat 'nmp test'
+         bat 'npm test'
       }
     }   
         stage('Deploy') {
             steps {
-                bat 'curl -X POST https://api.render.com/deploy/srv-cg29nud269vfsnv3iq80?key=YJ5nXUwyJ-s'
+                bat 'url -X POST https://api.render.com/deploy/srv-cg29nud269vfsnv3iq80?key=YJ5nXUwyJ-s'
             }
         }
         stage('End') {
