@@ -34,6 +34,11 @@ pipeline {
                    '''
             }
         }
+        stage('Test') {
+      steps {
+         bat 'npm test'
+      }
+    }   
         stage('Deploy') {
             steps {
                 bat 'curl -X POST https://api.render.com/deploy/srv-cfvgls5269v0ptl5kct0?key=Nh6cvLwRu8M'
