@@ -36,7 +36,7 @@ pipeline {
         }
         stage('Test') {
       steps {
-         bat 'npm test'
+         bat 'nmp test'
       }
     }   
         stage('Deploy') {
@@ -57,7 +57,8 @@ pipeline {
             }
     post{
         failure{
-            slackSend( channel: "#saf04-devops-g1", token: "slack_webhook token", color: "good", message: "${custom_msg()}")
+            slackSend( channel: "#gallery-ip", token: "https://hooks.slack.com/services/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
+", color: "good", message: "${custom_msg()}")
         }
     }
         
