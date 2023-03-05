@@ -41,7 +41,7 @@ pipeline {
     }   
         stage('Deploy') {
             steps {
-                bat 'url -X POST https://api.render.com/deploy/srv-cg29nud269vfsnv3iq80?key=YJ5nXUwyJ-s'
+                bat 'curl -X POST https://api.render.com/deploy/srv-cg29nud269vfsnv3iq80?key=YJ5nXUwyJ-s'
             }
         }
         stage('End') {
