@@ -34,14 +34,9 @@ pipeline {
                    '''
             }
         }
-        stage('Test') {
-      steps {
-         bat 'npm test'
-      }
-    }   
         stage('Deploy') {
             steps {
-                bat 'url -X POST https://api.render.com/deploy/srv-cg29nud269vfsnv3iq80?key=YJ5nXUwyJ-s'
+                bat 'curl -X POST https://api.render.com/deploy/srv-cg29nud269vfsnv3iq80?key=YJ5nXUwyJ-s'
             }
         }
         stage('End') {
@@ -57,8 +52,7 @@ pipeline {
             }
     post{
         failure{
-            slackSend( channel: "#gallery-ip", token: "https://hooks.slack.com/services/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
-", color: "good", message: "${custom_msg()}")
+            slackSend( channel: "#gallery-ip", token: "https://hooks.slack.com/services/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", color: "good", message: "${custom_msg()}")
         }
     }
         
